@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Complete
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager1 : MonoBehaviour
     {
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
@@ -51,8 +51,7 @@ namespace Complete
             // For all the tanks...
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-            /*
-             *    int randomTankIndex = Random.Range(0, 4);
+               int randomTankIndex = Random.Range(0, 4);
                 switch (randomTankIndex)
                 {
                     case 0:
@@ -70,9 +69,8 @@ namespace Complete
                     default:
                         break;
                 }
-             */
 
-                    // ... create them, set their player number and references needed for control.
+                // ... create them, set their player number and references needed for control.
                 m_Tanks[i].m_Instance =
                     Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
